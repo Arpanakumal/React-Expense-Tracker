@@ -4,14 +4,14 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import App from "./App.jsx";
 import GlobalState from "./context/index.jsx";
-import system from "./theme";
+import theme from "./theme";
 
 createRoot(document.getElementById("root")).render(
-  <GlobalState>
-    <StrictMode>
-      <ChakraProvider value={system}>
+  <StrictMode>
+    <ChakraProvider theme={theme}>
+      <GlobalState>
         <App />
-      </ChakraProvider>
-    </StrictMode>
-  </GlobalState>
+      </GlobalState>
+    </ChakraProvider>
+  </StrictMode>
 );
