@@ -6,12 +6,13 @@ import TransactionChartSummary from "../Chart";
 
 
 
-export default function Summary({ onClose, isOpen }) {
+export default function Summary({ onClose, isOpen, totalExpense, totalIncome }) {
     return(
      <Box
+    mt='10'
     p='6'
     border='1px solid'
-    borderColor='gray.100'
+    borderColor='gray.400'
     overflow='hidden'
     borderRadius='10'
     background='white'
@@ -40,36 +41,38 @@ export default function Summary({ onClose, isOpen }) {
         <Heading
         size='md'
         ms='4'
-        color='gray.600'
+        color='gray.800'
         >
-            Balance is 100
+            Balance is Rs. {totalIncome-totalExpense}
         </Heading>
         <Flex justifyContent='space-evenly'
         alignItems='center'
-        bg='gray.50'
+        bg='gray.300'
         w='full'
         h='100px'
         border='1px solid'
-        borderColor='gray.100'
+        borderColor='gray.400'
+        
+
         >
             <Flex flexDirection='column'>
-                <Heading color='gray.700'>Rs.100</Heading>
-                <Text color='gray.600'>Total Income</Text>
+                <Heading color='gray.700'>Rs.{totalIncome}</Heading>
+                <Text color='gray.700'>Total Income</Text>
 
             </Flex>
 
         </Flex>
         <Flex justifyContent='space-evenly'
         alignItems='center'
-        bg='gray.50'
+        bg='gray.300'
         w='full'
         h='100px'
         border='1px solid'
-        borderColor='gray.100'
+        borderColor='gray.400'
         >
             <Flex flexDirection='column'>
-                <Heading color='gray.700'>Rs.100</Heading>
-                <Text color='gray.600'>Total Expenses</Text>
+                <Heading color='gray.700'>Rs.{totalExpense}</Heading>
+                <Text color='gray.700'>Total Expenses</Text>
 
             </Flex>
 
@@ -80,7 +83,7 @@ export default function Summary({ onClose, isOpen }) {
 
 
                 <Heading>
-                    <TransactionChartSummary expense={100} income={1000} />
+                    <TransactionChartSummary expense={totalExpense} income={totalIncome} />
                 </Heading>
 
             </Box>

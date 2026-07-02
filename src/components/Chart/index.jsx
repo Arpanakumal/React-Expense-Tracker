@@ -2,7 +2,7 @@ import Chart from "react-apexcharts";
 
 const options = {
   labels: ["Expense", "Income"],
-  colors: ["red", "blue"],
+  colors: ["pink", "skyblue"],
 
   chart: {
     type: "pie",
